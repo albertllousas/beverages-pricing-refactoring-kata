@@ -20,13 +20,13 @@ class BeveragesPricingTest {
         Triple(Beverage(type = COFFEE), 1.20, 0.001),
         Triple(Beverage(type = TEA), 1.50, 0.001),
         Triple(Beverage(type = HOT_CHOCOLATE), 1.45, 0.001),
-        Triple(Beverage(type = TEA, extras = listOf(MILK)), 1.60, 0.001),
-        Triple(Beverage(type = COFFEE, extras = listOf(MILK)), 1.30, 0.001),
-        Triple(Beverage(type = COFFEE, extras = listOf(MILK, CREAM)), 1.45, 0.001),
-        Triple(Beverage(type = HOT_CHOCOLATE, extras = listOf(CREAM)), 1.60, 0.001),
+        Triple(Beverage(type = TEA, supplements = listOf(MILK)), 1.60, 0.001),
+        Triple(Beverage(type = COFFEE, supplements = listOf(MILK)), 1.30, 0.001),
+        Triple(Beverage(type = COFFEE, supplements = listOf(MILK, CREAM)), 1.45, 0.001),
+        Triple(Beverage(type = HOT_CHOCOLATE, supplements = listOf(CREAM)), 1.60, 0.001),
         Triple(Beverage(type = COFFEE, beveragePrices = mapOf(COFFEE to 1.40)), 1.40, 0.001)
     ).map { (beverage, price, error) ->
-        dynamicTest("should compute ${beverage.type} with extras ${beverage.extras}") {
+        dynamicTest("should compute ${beverage.type} with extras ${beverage.supplements}") {
             assertThat(beverage.price(), `is`(closeTo(price, error)))
         }
     }
