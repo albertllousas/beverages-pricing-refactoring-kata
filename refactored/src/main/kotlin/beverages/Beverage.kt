@@ -3,6 +3,7 @@ package beverages
 import beverages.BeverageType.COFFEE
 import beverages.BeverageType.HOT_CHOCOLATE
 import beverages.BeverageType.TEA
+import beverages.Extra.CREAM
 import beverages.Extra.MILK
 
 enum class BeverageType {
@@ -10,7 +11,7 @@ enum class BeverageType {
 }
 
 enum class Extra {
-    MILK
+    MILK, CREAM
 }
 
 open class Beverage(val type: BeverageType? = null, val extras: List<Extra> = emptyList()) {
@@ -22,6 +23,7 @@ open class Beverage(val type: BeverageType? = null, val extras: List<Extra> = em
     } + extras.sumOf { extra ->
         when (extra) {
             MILK -> 0.10
+            CREAM -> 0.15
         }
     }
 }
