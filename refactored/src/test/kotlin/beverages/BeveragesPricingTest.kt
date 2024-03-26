@@ -30,4 +30,11 @@ class BeveragesPricingTest {
     fun `should crash when beverage price is not present`() {
         assertThrows<PriceNotPresentException> { Beverage(type = Coffee, beveragePrices = emptyMap()).price() }
     }
+
+    @Test
+    fun `should crash when supplement price is not present`() {
+        assertThrows<PriceNotPresentException> {
+            Beverage(type = Coffee, supplements = listOf(Milk), supplementPrices = emptyMap()).price()
+        }
+    }
 }

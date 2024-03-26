@@ -25,7 +25,7 @@ open class Beverage(
 
     open fun price(): Double =
         (beveragePrices[type] ?: throw PriceNotPresentException(this.type.toString())) +
-                supplements.sumOf { supplementPrices[it] ?: TODO() }
+                supplements.sumOf { supplementPrices[it] ?: throw PriceNotPresentException(it.toString()) }
 }
 
 data class PriceNotPresentException(val item: String) : Exception("Price for $item is not present")
