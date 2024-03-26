@@ -8,6 +8,7 @@ data object HotChocolate : BeverageType
 sealed interface Supplement
 data object Milk: Supplement
 data object Cream: Supplement
+data object Cinnamon: Supplement
 
 open class Beverage(
     val type: BeverageType,
@@ -20,7 +21,7 @@ open class Beverage(
         val DEFAULT_BEVERAGE_PRICES: Map<BeverageType, Double> =
             mapOf(Coffee to 1.2, Tea to 1.50, HotChocolate to 1.45)
         val DEFAULT_SUPPLEMENT_PRICES: Map<Supplement, Double> =
-            mapOf(Milk to 0.10, Cream to 0.15)
+            mapOf(Milk to 0.10, Cream to 0.15, Cinnamon to 0.05)
     }
 
     open fun price(): Double =
