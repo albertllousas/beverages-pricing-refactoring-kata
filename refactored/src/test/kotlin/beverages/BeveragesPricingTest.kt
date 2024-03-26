@@ -9,7 +9,9 @@ import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.number.IsCloseTo.closeTo
 import org.junit.jupiter.api.DynamicTest.dynamicTest
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestFactory
+import org.junit.jupiter.api.assertThrows
 
 class BeveragesPricingTest {
 
@@ -27,5 +29,10 @@ class BeveragesPricingTest {
         dynamicTest("should compute ${beverage.type} with extras ${beverage.extras}") {
             assertThat(beverage.price(), `is`(closeTo(price, error)))
         }
+    }
+
+    @Test
+    fun `should crash when beverage price is not present`() {
+        assertThrows<PriceNotPresentException> {  Beverage(type = COFFEE, beveragePrices = emptyMap()).price() }
     }
 }

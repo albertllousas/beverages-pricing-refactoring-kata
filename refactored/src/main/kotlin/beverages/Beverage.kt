@@ -28,5 +28,9 @@ open class Beverage(
             mapOf(MILK to 0.10, CREAM to 0.15)
     }
 
-    open fun price(): Double = (beveragePrices[type] ?: TODO()) + extras.sumOf { extraPrices[it] ?: TODO() }
+    open fun price(): Double =
+        (beveragePrices[type] ?: throw PriceNotPresentException(this.type.toString())) +
+                extras.sumOf { extraPrices[it] ?: TODO() }
 }
+
+data class PriceNotPresentException(val item: String) : Exception("Price for $item is not present")
