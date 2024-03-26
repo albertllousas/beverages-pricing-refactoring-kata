@@ -1,7 +1,9 @@
 package beverages
 
-import beverages.BeverageType.*
-import beverages.Extra.*
+import beverages.BeverageType.COFFEE
+import beverages.BeverageType.HOT_CHOCOLATE
+import beverages.BeverageType.TEA
+import beverages.Extra.MILK
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.number.IsCloseTo.closeTo
@@ -35,7 +37,7 @@ class BeveragesPricingTest {
 
     @Test
     fun `should compute coffee with milk price`() {
-        val coffeeWithMilk: Coffee = CoffeeWithMilk()
+        val coffeeWithMilk = Beverage(type = COFFEE, extras = listOf(MILK))
         assertThat(coffeeWithMilk.price(), `is`(closeTo(1.30, 0.001)))
     }
 
