@@ -9,6 +9,7 @@ sealed interface Supplement
 data object Milk: Supplement
 data object Cream: Supplement
 data object Cinnamon: Supplement
+data class Extra(val name: String): Supplement
 
 open class Beverage(
     val type: BeverageType,
