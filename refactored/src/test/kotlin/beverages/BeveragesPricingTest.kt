@@ -22,7 +22,7 @@ class BeveragesPricingTest {
 
     @Test
     fun `should compute hot chocolate price`() {
-        val hotChocolate: Beverage = HotChocolate()
+        val hotChocolate = Beverage(type = HOT_CHOCOLATE)
         assertThat(hotChocolate.price(), `is`(closeTo(1.45, 0.001)))
     }
 
