@@ -16,7 +16,7 @@ class BeveragesPricingTest {
 
     @Test
     fun `should compute tea price`() {
-        val tea: Beverage = Tea()
+        val tea = Beverage(type = TEA)
         assertThat(tea.price(), `is`(closeTo(1.50, 0.001)))
     }
 
