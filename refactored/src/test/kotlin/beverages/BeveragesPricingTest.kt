@@ -8,43 +8,43 @@ import org.junit.jupiter.api.Test
 
 class BeveragesPricingTest {
     @Test
-    fun computes_coffee_price() {
+    fun `should compute coffee price`() {
         val coffee: Beverage = Coffee()
         assertThat(coffee.price(), `is`(closeTo(1.20, 0.001)))
     }
 
     @Test
-    fun computes_tea_price() {
+    fun `should compute tea price`() {
         val tea: Beverage = Tea()
         assertThat(tea.price(), `is`(closeTo(1.50, 0.001)))
     }
 
     @Test
-    fun computes_hot_chocolate_price() {
+    fun `should compute hot chocolate price`() {
         val hotChocolate: Beverage = HotChocolate()
         assertThat(hotChocolate.price(), `is`(closeTo(1.45, 0.001)))
     }
 
     @Test
-    fun computes_tea_with_milk_price() {
+    fun `should compute tea with milk price`() {
         val teaWithMilk: Tea = TeaWithMilk()
         assertThat(teaWithMilk.price(), `is`(closeTo(1.60, 0.001)))
     }
 
     @Test
-    fun computes_coffee_with_milk_price() {
+    fun `should compute coffee with milk price`() {
         val coffeeWithMilk: Coffee = CoffeeWithMilk()
         assertThat(coffeeWithMilk.price(), `is`(closeTo(1.30, 0.001)))
     }
 
     @Test
-    fun computes_coffee_with_milk_and_cream_price() {
+    fun `should compute coffee with milk and cream price`() {
         val coffeeWithMilkAndCream: Coffee = CoffeeWithMilkAndCream()
         assertThat(coffeeWithMilkAndCream.price(), `is`(closeTo(1.45, 0.001)))
     }
 
     @Test
-    fun computes_hot_chocolate_with_cream_price() {
+    fun `should compute hot chocolate with cream price`() {
         val hotChocolateWithCream = HotChocolateWithCream()
         assertThat(hotChocolateWithCream.price(), `is`(closeTo(1.60, 0.001)))
     }
