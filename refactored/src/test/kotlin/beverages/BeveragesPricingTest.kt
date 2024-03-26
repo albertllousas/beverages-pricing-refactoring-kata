@@ -1,5 +1,6 @@
 package beverages
 
+import beverages.BeverageType.*
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.number.IsCloseTo.closeTo
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Test
 class BeveragesPricingTest {
     @Test
     fun `should compute coffee price`() {
-        val coffee: Beverage = Coffee()
+        val coffee = Beverage(type = COFFEE)
         assertThat(coffee.price(), `is`(closeTo(1.20, 0.001)))
     }
 

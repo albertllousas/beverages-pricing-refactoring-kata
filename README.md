@@ -2,7 +2,7 @@
 
 ## Description
 
-Kata to practice refactoring away from a bad inheritance usage.
+Kata to practice refactoring away from a bad inheritance usage with TDD.
 
 Kotlin version of the kata from [here](https://github.com/trikitrok/beverages_pricing_refactoring_kata)
 
