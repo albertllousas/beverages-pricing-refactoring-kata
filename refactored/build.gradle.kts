@@ -2,13 +2,6 @@ plugins {
     alias(libs.plugins.jvm)
 }
 
-object Versions {
-    const val JUNIT = "5.10.1"
-    const val MOCKK = "1.13.9"
-    const val ASSERTJ = "3.25.2"
-    const val KOTEST_ASSERTIONS = "5.8.0"
-}
-
 repositories {
     mavenCentral()
 }
